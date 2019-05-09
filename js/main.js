@@ -137,7 +137,6 @@ $( document ).ready(function(){
         var valueItem = $(this).parent().parent().parent().parent().parent().find('.item').attr('value');
         var result = parseInt(valueSpan) + parseInt(valueItem);
         $('p.cost span').text(result);
-        console.log($('p.cost span').text());
     })
 
     $('.div-ghost button.see-image').on('click', function (e) {
@@ -145,5 +144,15 @@ $( document ).ready(function(){
         console.log(this);
         $(this).parent().find('a:eq(0)').trigger('click');
     })
+
+    $('.order-image').on('click', function (e) {
+        e.preventDefault();
+    $('#exampleModalCenter').modal('show');
+    })
+
+    $('.buttons a').on('click', function(e){
+        e.preventDefault();
+        $("html, body").animate({ scrollTop: $($(this).attr('href')).offset().top }, 1000);
+    });
 
 });
